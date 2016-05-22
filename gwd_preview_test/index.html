@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<style type="text/css">body,
+html,
+#allmap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    font-family: 微软雅黑;
+}</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=DcoirgVzBcSqhqr82bhY2VFe5dIRpLP8"></script>
+	<title>TrafficTracker</title>
+</head>
+<body>
+	<div id="allmap"></div>
+
+
+
+
+<script type="text/javascript">
+	
+	var map = new BMap.Map("allmap");    // creat Map instance
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // initialization, set central point cordinate and map level.
+	map.addControl(new BMap.MapTypeControl());   //add map type control
+	map.setCurrentCity("北京");          // set city name, essential.
+	map.enableScrollWheelZoom(true);     //enable scroll wheel zoom.
+  
+  
+var polyline = new BMap.Polyline([    
+   new BMap.Point(116.376241,40.007577),    
+   new BMap.Point(116.387328,40.007975)    
+ ],    
+ {strokeColor:"red", strokeWeight:6, strokeOpacity:0.5}    
+);    
+map.addOverlay(polyline);
+  
+var polyline = new BMap.Polyline([    
+   new BMap.Point(116.387328,40.007975),    
+   new BMap.Point(116.399709,40.008579)    
+ ],    
+ {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}    
+);    
+map.addOverlay(polyline);  
+  
+var polyline = new BMap.Polyline([    
+   new BMap.Point(116.399709,40.008579),    
+   new BMap.Point(116.414161,40.009037)    
+ ],    
+ {strokeColor:"green", strokeWeight:6, strokeOpacity:0.5}    
+);    
+map.addOverlay(polyline);  
+  
+var polyline = new BMap.Polyline([    
+   new BMap.Point(116.414161,40.009037),    
+   new BMap.Point(116.422554,40.009105)    
+ ],    
+ {strokeColor:"purple", strokeWeight:6, strokeOpacity:0.5}    
+);    
+map.addOverlay(polyline);  
+  
+</script>
+</body></html>
