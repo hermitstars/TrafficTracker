@@ -9,7 +9,7 @@
 
   </style>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DcoirgVzBcSqhqr82bhY2VFe5dIRpLP8"></script>
-  <title>add/delete overlay</title>
+  <title>TrafficTracker</title>
 </head>
 <body>
   <div id="allmap"></div>
@@ -18,43 +18,58 @@
 <script type="text/javascript">
   
   var map = new BMap.Map("allmap");
-  var point = new BMap.Point(116.404, 39.915);
-  map.centerAndZoom(point, 11);
+  var point = new BMap.Point(116.399709,40.008579);
+  map.centerAndZoom(point, 15);
+
+  var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); 
+  map.addControl(top_right_navigation); 
   
   var marker = new BMap.Marker(new BMap.Point(116.387328,40.007975)); 
   map.addOverlay(marker); 
-  marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
-  
-  var polyline = new BMap.Polyline([    
+  //marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
+  marker.addEventListener("click",getAttr);
+  function getAttr(){
+    var p = marker.getPosition();       //acquire marker's position
+    alert("marker's location is:" + p.lng + "," + p.lat);   
+  }
+
+  var polyline1 = new BMap.Polyline([    
    new BMap.Point(116.376241,40.007577),    
    new BMap.Point(116.387328,40.007975)    
  ],    
  {strokeColor:"red", strokeWeight:6, strokeOpacity:0.5}    
 );    
-map.addOverlay(polyline);
+map.addOverlay(polyline1);
   
-var polyline = new BMap.Polyline([    
+var polyline2 = new BMap.Polyline([    
    new BMap.Point(116.387328,40.007975),    
    new BMap.Point(116.399709,40.008579)    
  ],    
  {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}    
 );    
-map.addOverlay(polyline);  
+map.addOverlay(polyline2);  
   
-var polyline = new BMap.Polyline([    
+var polyline3 = new BMap.Polyline([    
    new BMap.Point(116.399709,40.008579),    
    new BMap.Point(116.414161,40.009037)    
  ],    
  {strokeColor:"green", strokeWeight:6, strokeOpacity:0.5}    
 );    
-map.addOverlay(polyline);  
+map.addOverlay(polyline3);  
   
-var polyline = new BMap.Polyline([    
+var polyline4 = new BMap.Polyline([    
    new BMap.Point(116.414161,40.009037),    
    new BMap.Point(116.422554,40.009105)    
  ],    
  {strokeColor:"orange", strokeWeight:6, strokeOpacity:0.5}    
 );    
-map.addOverlay(polyline);  
+map.addOverlay(polyline4);  
+
+var point = new BMap.Point(116.422554,40.009105);
+  var marker = new BMap.Marker(point);  // create marker
+  map.addOverlay(marker);              // add marker to map
+  //marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
+  var label = new BMap.Label("meow",{offset:new BMap.Size(20,-10)});
+  marker.setLabel(label);
   
 </script>
