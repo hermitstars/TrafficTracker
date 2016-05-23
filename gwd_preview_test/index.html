@@ -23,6 +23,7 @@
   
   var marker = new BMap.Marker(new BMap.Point(116.387328,40.007975)); 
   map.addOverlay(marker); 
+  marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
   
   var polyline = new BMap.Polyline([    
    new BMap.Point(116.376241,40.007577),    
