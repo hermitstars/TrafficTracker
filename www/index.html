@@ -44,29 +44,37 @@
   var color3
   var color4
 
-$(document).ready(function(){
-  $('#button').click(function(){
-    $.ajax({
-      type:"GET",
-      url:"color.json",
-      dataType:"json",
-      success:function(data){
+$(function(){
+  $.getJSON('color.json').done(function(data){
+    color1 = [0].optionValue;
+    color2 = [1].optionValue;
+    color3 = [2].optionValue;
+    color4 = [3].optionValue;
+  })
+})
+// $(document).ready(function(){
+//   $('#button').click(function(){
+//     $.ajax({
+//       type:"GET",
+//       url:"color.json",
+//       dataType:"json",
+//       success:function(data){
 
-        var color="<ul>";
-        $.each(data,function(i,n){    
-          color+="<li>"+n["optionValue"]+"</li>";
-        });
-        color+="</ul>";
+//         var color="<ul>";
+//         $.each(data,function(i,n){    
+//           color+="<li>"+n["optionValue"]+"</li>";
+//         });
+//         color+="</ul>";
             
             // color1 = colors[0].optionValue
             // color2 = colors[1].optionValue
             // color3 = colors[2].optionValue
             // color4 = colors[3].optionValue
-      }
-    });
-    return false;
-  });
-});
+//       }
+//     });
+//     return false;
+//   });
+// });
 
 
   var polyline1 = new BMap.Polyline([    
