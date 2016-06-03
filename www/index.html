@@ -78,12 +78,12 @@ var point = new BMap.Point(116.422554,40.009105);
   var label = new BMap.Label("meow",{offset:new BMap.Size(20,-10)});
   marker.setLabel(label);
 
-//var json={
-//  "value":"red",   
+var json={
+ "value":"red",   
 
-//}
+}
 
-//console.log(json.value);
+console.log(json.value);
 
 $(document).ready(function(){
   $('#button').click(function(){
@@ -124,7 +124,8 @@ $(document).ready(function(){
 // });
 
 function getString() {  
-var s = ”<%=AA()%>“; 
+var v = "meow";
+var s = '<%=AA("' + v + '") %>';
 alert(s); 
 } 
 
