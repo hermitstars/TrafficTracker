@@ -44,10 +44,29 @@
   var color3
   var color4
 
-  color1 = colors[0].optionValue
-  color2 = colors[1].optionValue
-  color3 = colors[2].optionValue
-  color4 = colors[3].optionValue
+$(document).ready(function(){
+  $('#button').click(function(){
+    $.ajax({
+      type:"GET",
+      url:"color.json",
+      dataType:"json",
+      success:function(data){
+        var color="<ul>";
+        $.each(data,function(i,n){    
+          color+="<li>"+n["optionValue"]+"</li>";
+        });
+        color+="</ul>";
+            color1 = colors[0].optionValue
+            color2 = colors[1].optionValue
+            color3 = colors[2].optionValue
+            color4 = colors[3].optionValue
+        $('#result').append(color);
+      }
+    });
+    return false;
+  });
+});
+
 
   var polyline1 = new BMap.Polyline([    
    new BMap.Point(116.376241,40.007577),    
@@ -113,24 +132,6 @@ console.log(json.value);
 //   });
 // });
 
-$(document).ready(function(){
-  $('#button').click(function(){
-    $.ajax({
-      type:"GET",
-      url:"color.json",
-      dataType:"json",
-      success:function(data){
-        var color="<ul>";
-        $.each(data,function(i,n){    
-          color+="<li>"+n["optionValue"]+"</li>";
-        });
-        color+="</ul>";
-        $('#result').append(color);
-      }
-    });
-    return false;
-  });
-});
 
 // function getString() {  
 // var v = "meow";
