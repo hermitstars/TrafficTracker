@@ -89,7 +89,7 @@ var point = new BMap.Point(116.422554,40.009105);
 //   $('#button').click(function(){
 //     $.ajax({
 //       type:"GET",
-//       url:"color.txt",
+//       url:"color.json",
 //       dataType:"json",
 //       success:function(data){
 //         var color="<ul>";
@@ -104,24 +104,28 @@ var point = new BMap.Point(116.422554,40.009105);
 //   });
 // });
 
-$(document).ready(function(){
-  $('#button').click(function(){
-    $.ajax({
-      type:"GET",
-      url:"color.txt",
-      dataType:"json",
-      success:function(data){
-        var color="<ul>";
-        $.each(data,function(i,n){    
-          color+="<li>"+n["optionValue"]+"</li>";
-        });
-        color+="</ul>";
-        $('#result').append(color);
-      }
-    });
-    return false;
-  });
-});
+// $(document).ready(function(){
+//   $('#button').click(function(){
+//     $.ajax({
+//       type:"GET",
+//       url:"color.txt",
+//       dataType:"json",
+//       success:function(data){
+//         var color="<ul>";
+//         $.each(data,function(i,n){    
+//           color+="<li>"+n["optionValue"]+"</li>";
+//         });
+//         color+="</ul>";
+//         $('#result').append(color);
+//       }
+//     });
+//     return false;
+//   });
+// });
 
+function getString() {  
+var s = ”<%=AA()%>“; 
+alert(s); 
+} 
 
 </script>
