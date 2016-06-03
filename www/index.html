@@ -85,24 +85,24 @@ var point = new BMap.Point(116.422554,40.009105);
 
 //console.log(json.value);
 
-// $(document).ready(function(){
-//   $('#button').click(function(){
-//     $.ajax({
-//       type:"GET",
-//       url:"color.json",
-//       dataType:"json",
-//       success:function(data){
-//         var color="<ul>";
-//         $.each(data,function(i,n){  
-//           color+="<li>"+n["color"]+"</li>";
-//         });
-//         color+="</ul>";
-//         $('#result').append(color);
-//       }
-//     });
-//     return false;
-//   });
-// });
+$(document).ready(function(){
+  $('#button').click(function(){
+    $.ajax({
+      type:"GET",
+      url:"color.json",
+      dataType:"json",
+      success:function(data){
+        var color="<ul>";
+        $.each(data,function(i,n){  
+          color+="<li>"+n["color"]+"</li>";
+        });
+        color+="</ul>";
+        $('#result').append(color);
+      }
+    });
+    return false;
+  });
+});
 
 // $(document).ready(function(){
 //   $('#button').click(function(){
