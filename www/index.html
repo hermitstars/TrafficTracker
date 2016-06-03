@@ -9,10 +9,16 @@
 
   </style>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DcoirgVzBcSqhqr82bhY2VFe5dIRpLP8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <title>TrafficTracker</title>
 </head>
 <body>
   <div id="allmap"></div>
+  <div>click to get JSON data</div>
+<input type="button" id="button" value="Meow" />
+<div id="result"></div>
+
 </body>
 </html>
 <script type="text/javascript">
@@ -72,11 +78,50 @@ var point = new BMap.Point(116.422554,40.009105);
   var label = new BMap.Label("meow",{offset:new BMap.Size(20,-10)});
   marker.setLabel(label);
 
-var json={
-  "value":"red",   
-}
+//var json={
+//  "value":"red",   
 
-console.log(json.value);
+//}
+
+//console.log(json.value);
+
+// $(document).ready(function(){
+//   $('#button').click(function(){
+//     $.ajax({
+//       type:"GET",
+//       url:"color.txt",
+//       dataType:"json",
+//       success:function(data){
+//         var color="<ul>";
+//         $.each(data,function(i,n){  
+//           color+="<li>"+n["color"]+"</li>";
+//         });
+//         color+="</ul>";
+//         $('#result').append(color);
+//       }
+//     });
+//     return false;
+//   });
+// });
+
+$(document).ready(function(){
+  $('#button').click(function(){
+    $.ajax({
+      type:"GET",
+      url:"color.txt",
+      dataType:"json",
+      success:function(data){
+        var color="<ul>";
+        $.each(data,function(i,n){    
+          color+="<li>"+n["optionValue"]+"</li>";
+        });
+        color+="</ul>";
+        $('#result').append(color);
+      }
+    });
+    return false;
+  });
+});
 
 
 </script>
