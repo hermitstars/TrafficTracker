@@ -39,11 +39,21 @@
     alert("marker's location is:" + p.lng + "," + p.lat);   
   }
 
+  var color1
+  var color2
+  var color3
+  var color4
+
+  color1 = colors[0].optionValue
+  color2 = colors[1].optionValue
+  color3 = colors[2].optionValue
+  color4 = colors[3].optionValue
+
   var polyline1 = new BMap.Polyline([    
    new BMap.Point(116.376241,40.007577),    
    new BMap.Point(116.387328,40.007975)    
  ],    
- {strokeColor:"red", strokeWeight:6, strokeOpacity:0.5}    
+ {strokeColor:color1, strokeWeight:6, strokeOpacity:0.5}    
 );    
 map.addOverlay(polyline1);
   
@@ -51,7 +61,7 @@ var polyline2 = new BMap.Polyline([
    new BMap.Point(116.387328,40.007975),    
    new BMap.Point(116.399709,40.008579)    
  ],    
- {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}    
+ {strokeColor:color2, strokeWeight:6, strokeOpacity:0.5}    
 );    
 map.addOverlay(polyline2);  
   
@@ -59,7 +69,7 @@ var polyline3 = new BMap.Polyline([
    new BMap.Point(116.399709,40.008579),    
    new BMap.Point(116.414161,40.009037)    
  ],    
- {strokeColor:"green", strokeWeight:6, strokeOpacity:0.5}    
+ {strokeColor:color3, strokeWeight:6, strokeOpacity:0.5}    
 );    
 map.addOverlay(polyline3);  
   
@@ -67,7 +77,7 @@ var polyline4 = new BMap.Polyline([
    new BMap.Point(116.414161,40.009037),    
    new BMap.Point(116.422554,40.009105)    
  ],    
- {strokeColor:"orange", strokeWeight:6, strokeOpacity:0.5}    
+ {strokeColor:color4, strokeWeight:6, strokeOpacity:0.5}    
 );    
 map.addOverlay(polyline4);  
 
@@ -122,10 +132,10 @@ $(document).ready(function(){
   });
 });
 
-function getString() {  
-var v = "meow";
-var s = '<%=AA("' + v + '") %>';
-alert(s); 
-} 
+// function getString() {  
+// var v = "meow";
+// var s = '<%=AA("' + v + '") %>';
+// alert(s); 
+// } 
 
 </script>

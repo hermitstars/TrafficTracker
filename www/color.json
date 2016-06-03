@@ -1,5 +1,7 @@
+var colors =
 [
-{"optionKey":"1", "optionValue":"red"},
-{"optionKey":"2", "optionValue":"blue"},
-{"optionKey":"3", "optionValue":"orange"}
+{"optionKey":"0", "optionValue":"red"},
+{"optionKey":"1", "optionValue":"blue"},
+{"optionKey":"2", "optionValue":"orange"}
+{"optionKey":"3", "optionValue":"yellow"}
 ]
