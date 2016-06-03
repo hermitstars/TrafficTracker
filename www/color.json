@@ -1,6 +1,6 @@
 [
-{"optionKey":"0", "optionValue":"red"},
-{"optionKey":"1", "optionValue":"blue"},
-{"optionKey":"2", "optionValue":"orange"}
-{"optionKey":"3", "optionValue":"yellow"}
+{"optionValue":"red"},
+{"optionValue":"blue"},
+{"optionValue":"orange"}
+{"optionValue":"yellow"}
 ]
