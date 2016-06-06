@@ -34,8 +34,9 @@
     </select>
     <input type="button" id="result" value="search"/>
   </div>
-  <div id="r-result"></div>
+  <div id="refresh"><input type="button" value="refresh"/></div>
   <div id="allmap"></div>
+  <div id="r-result"></div>
 <!--   <div>click to get JSON data</div>
 <input type="button" id="button" value="Meow" />
 <div id="result"></div> -->
@@ -380,6 +381,10 @@ var routePolicy = [BMAP_DRIVING_POLICY_LEAST_TIME,BMAP_DRIVING_POLICY_LEAST_DIST
       var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: false},policy: route});
       driving.search(start,end);
     }
+  });
+
+  $("#refresh").click(function(){
+     location.reload()
   });
 
 
