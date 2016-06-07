@@ -8,19 +8,17 @@
     body, html{width: 100%;height: 100%; margin: 10px; font-family:"Comic Sans MS";}
 
 
-    #allmap{height:95%;width:95%;}
+    #allmap{height:98%;width:98%;}
     #r-result,#r-result table{width:95%;}
 
-        div{  
-            float: left;  
-        } 
+  div {display:inline}
 
   p.map {
     border-style: solid;
     border-width: medium;
     border-color: #138D75;
-    margin: 10px;
-}
+    margin-top: 20px;
+    }
     </style>
 
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DcoirgVzBcSqhqr82bhY2VFe5dIRpLP8"></script>
@@ -28,12 +26,15 @@
 
   <title>TrafficTracker</title>
 </head>
+
+
 <body>
-  <div id="start"><font color="#0E6655">start:</font> <input type="text" id="suggestId1" size="20" margin = "10px"/></div>
-  <div id="end"><font color="#0E6655">end: </font><input type="text" id="suggestId2" size="20" margin = "10px"/></div>
+
+  <div class="div-inline" id="start"><font color="#0E6655">start:</font> <input type="text" id="suggestId1" size="30" margin = "20px"/></div>
+  <div class="div-inline" id="end"><font color="#0E6655">end: </font><input type="text" id="suggestId2" size="30" margin = "20px"/></div>
   <div id="searchResultPanel1" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
   <div id="searchResultPanel2" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
-  <div id="driving_way">
+  <div class="div-inline" id="driving_way">
     <select>
       <option value="0">minimum time</option>
       <option value="1">shortest path</option>
@@ -41,7 +42,10 @@
     </select>
     <input type="button" color="#0E6655" id="result" value="search"/>
   </div>
-  <div id="refresh"><input type="button" value="refresh"/></div>
+  <div class="div-inline" id="refresh"><input type="button" value="refresh"/></div>
+
+
+
   <p class = "map" <div id="allmap">> </div></p>
   <div id="r-result"></div>
 
