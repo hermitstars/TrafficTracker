@@ -200,14 +200,19 @@
     var carNumber2 = "{{n_car[1]}}"
     var carNumber3 = "{{n_car[2]}}"
     var carNumber4 = "{{n_car[3]}}"
-    var carNumber5 = "{{n_car[4]}}"
+   
+    var speed1 = "{{avg_speed[0]}}"
+    var speed2 = "{{avg_speed[1]}}"
+    var speed3 = "{{avg_speed[2]}}"
+    var speed4 = "{{avg_speed[3]}}"
 
 
-    var txt1 = "camera1", mouseoverTxt1 = txt1 + " location is: 116.376241,40.007577" + ";  Current No. of car: " + carNumber1;
-    var txt2 = "camera2", mouseoverTxt2 = txt2 + " location is: 116.387328,40.007975" + ";  Current No. of car: " + carNumber2;
-    var txt3 = "camera3", mouseoverTxt3 = txt3 + " location is: 116.399709,40.008579" + ";  Current No. of car: " + carNumber3;
-    var txt4 = "camera4", mouseoverTxt4 = txt4 + " location is: 116.414161,40.009037" + ";  Current No. of car: " + carNumber4;
-    var txt5 = "camera5", mouseoverTxt5 = txt5 + " location is: 116.42396,40.009212" + ";  Current No. of car: " + carNumber5;
+
+    var txt1 = "camera1", mouseoverTxt1 = txt1 + " location is: 116.376241,40.007577" + ";  Current No. of car: " + carNumber1 + ";  AverageSpeed: " + speed1;
+    var txt2 = "camera2", mouseoverTxt2 = txt2 + " location is: 116.387328,40.007975" + ";  Current No. of car: " + carNumber2; + ";  AverageSpeed: " + speed2;
+    var txt3 = "camera3", mouseoverTxt3 = txt3 + " location is: 116.399709,40.008579" + ";  Current No. of car: " + carNumber3; + ";  AverageSpeed: " + speed3;
+    var txt4 = "camera4", mouseoverTxt4 = txt4 + " location is: 116.414161,40.009037" + ";  Current No. of car: " + carNumber4; + ";  AverageSpeed: " + speed4;
+    var txt5 = "camera5", mouseoverTxt5 = txt5 + " location is: 116.42396,40.009212" ;
 
 
     var myCompOverlay1 = new ComplexCustomOverlay(point1, "camera1",mouseoverTxt1);
